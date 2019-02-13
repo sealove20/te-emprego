@@ -5,16 +5,16 @@
       color="grey lighten-4"
       class="elevation-4"
     >
-      <img :src="user.avatar" alt="avatar">
+      <img :src="perfil.avatar" alt="avatar">
     </v-avatar>
     <div class="user-info">
       <v-tooltip right>
-        <div class="name" slot="activator">{{ user.name }}</div>
-        <span>{{ user.name }}</span>
+        <div class="name" slot="activator">{{ perfil.nome }}</div>
+        <span>{{ perfil.nome }}</span>
       </v-tooltip>
       <v-tooltip right>
-        <div class="status" slot="activator">{{ user.status }}</div>
-        <span>Você está {{ user.status }}</span>
+        <div class="status" slot="activator">{{ status }}</div>
+        <span>Você está {{ status }}</span>
       </v-tooltip>
     </div>
   </div>
@@ -22,15 +22,15 @@
 
 <script>
 export default {
+  computed: {
+    perfil() {
+      return this.$store.getters.Perfil;
+    },
+  },
   data() {
     return {
       avatarSize: 48,
-      title: 'Avatar',
-      user: {
-        name: 'Daniel Bonifacio de Oliveira',
-        status: 'online',
-        avatar: '//gravatar.com/avatar/1419a379c561c42cbdd9e82d064363a6?s=48',
-      },
+      status: 'online',
     };
   },
 };

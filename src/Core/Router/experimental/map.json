@@ -15,6 +15,14 @@
         }
       },
       {
+        "path": "/perfil",
+        "component": "Default/Perfil",
+        "name": "Perfil",
+        "meta": {
+          "title": "Perfil"
+        }
+      },
+      {
         "component": "Default/CaixaEntrada",
         "path": "/caixa-entrada",
         "meta": {
